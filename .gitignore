@@ -63,3 +63,6 @@ local_settings.py
 # If you're using Django migrations but want to exclude them (optional)
  **/migrations/
  !**/migrations/__init__.py
+
+
+finance/test_files/
