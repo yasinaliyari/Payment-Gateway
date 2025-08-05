@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os.path
 from .local_settings import *
 from pathlib import Path
 
@@ -51,7 +52,7 @@ ROOT_URLCONF = "PaymentGateway.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -121,3 +122,16 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# ZARINPAL = {
+#     "gateway_request_url": "https://sandbox.zarinpal.com/pg/v4/payment/request.json",
+#     "gateway_callback_url": "http://127.0.0.1:8000/finance/verify",
+#     "merchant_id": ZARINPAL_MERCHANT_ID,
+# }
+
+ZARINPAL = {
+    "gateway_request_url": "https://sandbox.zarinpal.com/pg/v4/payment/request.json",
+    "gateway_verify_url": "https://sandbox.zarinpal.com/pg/v4/payment/verify.json",
+    "gateway_callback_url": "http://127.0.0.1:8000/finance/verify/",
+    "merchant_id": ZARINPAL_MERCHANT_ID,
+}
