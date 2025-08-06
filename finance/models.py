@@ -122,3 +122,7 @@ class Payment(models.Model):
         if not self.is_paid and handler is not None:
             handler(self, data)
         return self.is_paid
+
+    def get_gateway(self):
+        gateway = Gateway.objects.filter(is_enable=True).first()
+        return gateway.gateway_code
