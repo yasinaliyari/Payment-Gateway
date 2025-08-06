@@ -41,3 +41,13 @@ class Gateway(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_request_handler(self):
+        handlers = {
+            self.FUNCTION_SAMAN: None,
+            self.FUNCTION_SHAPARAK: None,
+            self.FUNCTION_FINOTECH: None,
+            self.FUNCTION_ZARRINPAL: zpal_payment_checker,
+            self.FUNCTION_PARSIAN: None,
+        }
+        return handlers[self.gateway_code]
