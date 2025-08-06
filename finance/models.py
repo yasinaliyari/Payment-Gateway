@@ -113,3 +113,6 @@ class Payment(models.Model):
     @property
     def title(self):
         return _("Instant payment")
+
+    def status_changed(self):
+        return self.is_paid != self._b_is_paid
