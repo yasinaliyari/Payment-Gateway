@@ -34,3 +34,7 @@ class Gateway(models.Model):
     )
     is_enable = models.BooleanField(verbose_name=_("is enabled"), default=True)
     auth_data = models.TextField(verbose_name=_("auth data"), null=True, blank=True)
+
+    class Meta:
+        verbose_name = _("Gateway")
+        verbose_name_plural = _("Gateways")
