@@ -116,3 +116,9 @@ class Payment(models.Model):
 
     def status_changed(self):
         return self.is_paid != self._b_is_paid
+
+    def verify(self, data):
+        handler = self.gateway.get_verify_handler()
+        if not self.is_paid and handler is not None:
+            handler(self, data)
+        return self.is_paid
