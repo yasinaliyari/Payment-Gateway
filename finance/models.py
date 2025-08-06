@@ -92,3 +92,14 @@ class Payment(models.Model):
         on_delete=models.SET_NULL,
     )
     authority = models.CharField(max_length=64, verbose_name=_("authority"), blank=True)
+
+    class Meta:
+        verbose_name = _("Payment")
+        verbose_name_plural = _("Payments")
+
+    def __str__(self):
+        return self.invoice_number.hex
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._b_is_paid = self.is_paid
