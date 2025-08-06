@@ -62,3 +62,7 @@ class Gateway(models.Model):
             self.FUNCTION_PARSIAN: None,
         }
         return handlers[self.gateway_code]
+
+    @property
+    def credentials(self):
+        return json.loads(self.auth_data)
