@@ -103,3 +103,9 @@ class Payment(models.Model):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._b_is_paid = self.is_paid
+
+    @property
+    def bank_page(self):
+        handler = self.gateway.get_request_handler()
+        if handler is not None:
+            return handler(self.gateway, self)
