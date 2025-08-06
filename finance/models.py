@@ -38,3 +38,6 @@ class Gateway(models.Model):
     class Meta:
         verbose_name = _("Gateway")
         verbose_name_plural = _("Gateways")
+
+    def __str__(self):
+        return self.title
