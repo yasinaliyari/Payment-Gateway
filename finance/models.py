@@ -51,3 +51,14 @@ class Gateway(models.Model):
             self.FUNCTION_PARSIAN: None,
         }
         return handlers[self.gateway_code]
+
+    @property
+    def get_verify_handler(self):
+        handlers = {
+            self.FUNCTION_SAMAN: None,
+            self.FUNCTION_SHAPARAK: None,
+            self.FUNCTION_FINOTECH: None,
+            self.FUNCTION_ZARRINPAL: zpal_payment_checker,
+            self.FUNCTION_PARSIAN: None,
+        }
+        return handlers[self.gateway_code]
