@@ -2,7 +2,7 @@ from django.conf import settings
 from django.shortcuts import render, redirect
 from django.views import View
 from finance.forms import ChargeWalletForm
-from finance.utils.zarinpal import zpal_request_handler
+from finance.utils.zarinpal import zpal_request_handler, zpal_payment_checker
 
 
 class ChargeWalletView(View):
@@ -28,3 +28,26 @@ class ChargeWalletView(View):
                 return redirect(payment_link)
 
         return render(request, self.template_name, {"form": form})
+
+
+class VerifyView(View):
+    template_name = "callback.html"
+
+    def get(self, request, *args, **kwargs):
+        status = request.GET.get("status")
+        authority = request.GET.get("authority")
+
+        if status != "OK":
+            return render(
+                request,
+                self.template_name,
+                {"is_paid": False},
+            )
+
+        is_paid, ref_id = zpal_payment_checker(
+            settings.ZARINPAL["merchant_id"], 10000, authority
+        )
+
+        return render(
+            request, self.template_name, {"is_paid": is_paid, "ref_id": ref_id}
+        )
