@@ -109,3 +109,7 @@ class Payment(models.Model):
         handler = self.gateway.get_request_handler()
         if handler is not None:
             return handler(self.gateway, self)
+
+    @property
+    def title(self):
+        return _("Instant payment")
