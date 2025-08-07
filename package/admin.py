@@ -10,4 +10,4 @@ class PackageAttributeInLine(admin.TabularInline):
 @register(Package)
 class PackageAdmin(admin.ModelAdmin):
     list_display = ["title", "price"]
-    inlines = PackageAttributeInLine
+    inlines = (PackageAttributeInLine,)
