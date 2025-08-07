@@ -1,3 +1,8 @@
 from django.contrib import admin
+from django.contrib.admin import register
+from package.models import Package
 
-# Register your models here.
+
+@register(Package)
+class PackageAdmin(admin.ModelAdmin):
+    list_display = ["title", "price"]
