@@ -104,11 +104,26 @@ class Payment(models.Model):
         super().__init__(*args, **kwargs)
         self._b_is_paid = self.is_paid
 
+    def get_hander_data(self):
+        return dict(
+            merchant_id=self.gateway.auth_data,
+            amount=self.amount,
+            detail=self.title,
+            user_email=self.user.email,
+            user_phone_number=getattr(self.user, "phone_number", None),
+            callback=settings.ZARINPAL["gateway_callback_url"],
+        )
+
     @property
     def bank_page(self):
         handler = self.gateway.get_request_handler()
         if handler is not None:
-            return handler(self.gateway, self)
+            data = self.get_hander_data()
+            link, authority = handler(**data)
+            if authority is not None:
+                self.authority = authority
+                self.save()
+            return link
 
     @property
     def title(self):
@@ -120,7 +135,7 @@ class Payment(models.Model):
     def verify(self, data):
         handler = self.gateway.get_verify_handler()
         if not self.is_paid and handler is not None:
-            handler(self, data)
+            handler(**data)
         return self.is_paid
 
     def get_gateway(self):
