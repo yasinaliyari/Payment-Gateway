@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from django.db import models
+from django.db import models, transaction
 from finance.models import Payment
 from package.models import Package
 
@@ -30,8 +30,17 @@ class Purchase(models.Model):
     def __str__(self):
         return f"{self.user} >> {self.package}"
 
+    @staticmethod
+    def create_payment(package, user):
+        return Payment.objects.create(amount=package.price, user=user)
+
     @classmethod
     def create(cls, package, user):
         if package.is_enable:
-            return cls.objects.create(user=user, package=package, price=package.price)
+            with transaction.atomic():
+                payment = cls.create_payment(package, user)
+                purchase = cls.objects.create(
+                    user=user, package=package, price=package.price, payment=payment
+                )
+            return purchase
         return None
