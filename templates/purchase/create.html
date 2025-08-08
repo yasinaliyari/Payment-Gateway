@@ -5,6 +5,11 @@
     <title>Create Purchase</title>
 </head>
 <body>
-    {% if purchase %}Purchase number {{ purchase.id }} create, status: {{ purchase.get_status_display }} {% else %} Purchase not created {% endif %}
+    {% if purchase %}
+        <p>Purchase number {{ purchase.id }} create, status: {{ purchase.get_status_display }}</p>
+        <a href="{% url 'payment-link' purchase.payment.invoice_number %}">Pay with credit card</a>
+    {% else %}
+        <p>Purchase not created</p>
+    {% endif %}
 </body>
 </html>
