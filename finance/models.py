@@ -47,7 +47,7 @@ class Gateway(models.Model):
             self.FUNCTION_SAMAN: None,
             self.FUNCTION_SHAPARAK: None,
             self.FUNCTION_FINOTECH: None,
-            self.FUNCTION_ZARRINPAL: zpal_payment_checker,
+            self.FUNCTION_ZARRINPAL: zpal_request_handler,
             self.FUNCTION_PARSIAN: None,
         }
         return handlers[self.gateway_code]
@@ -108,7 +108,7 @@ class Payment(models.Model):
         return dict(
             merchant_id=self.gateway.auth_data,
             amount=self.amount,
-            detail=self.title,
+            detail=str(self.title),
             user_email=self.user.email,
             user_phone_number=getattr(self.user, "phone_number", None),
             callback=settings.ZARINPAL["gateway_callback_url"],
@@ -133,9 +133,11 @@ class Payment(models.Model):
         return self.is_paid != self._b_is_paid
 
     def verify(self, data):
-        handler = self.gateway.get_verify_handler()
+        handler = self.gateway.get_verify_handler
         if not self.is_paid and handler is not None:
-            handler(**data)
+            is_paid, ref_id = handler(**data)
+            if is_paid:
+                self.is_paid = True
         return self.is_paid
 
     def get_gateway(self):

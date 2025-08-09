@@ -36,8 +36,8 @@ class VerifyView(View):
     template_name = "callback.html"
 
     def get(self, request, *args, **kwargs):
-        status = request.GET.get("status")
-        authority = request.GET.get("authority")
+        status = request.GET.get("Status")
+        authority = request.GET.get("Authority")
         try:
             payment = Payment.objects.get(authority=authority)
         except Payment.DoesNotExist:
@@ -71,7 +71,7 @@ class PaymentView(View):
         return render(
             request,
             "finance/payment_detail.html",
-            {"pymenta": payment, "gateways": gateways},
+            {"payment": payment, "gateways": gateways},
         )
 
 
@@ -92,6 +92,7 @@ class PaymentGatewayView(View):
         payment_link = payment.bank_page
         if payment_link:
             return redirect(payment_link)
+
         gateways = Gateway.objects.filter(is_enable=True)
         return render(
             request,
