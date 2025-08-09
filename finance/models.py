@@ -138,6 +138,7 @@ class Payment(models.Model):
             is_paid, ref_id = handler(**data)
             if is_paid:
                 self.is_paid = True
+                self.save()
         return self.is_paid
 
     def get_gateway(self):

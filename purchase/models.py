@@ -24,7 +24,11 @@ class Purchase(models.Model):
     price = models.PositiveBigIntegerField()
     status = models.SmallIntegerField(choices=STATUS_CHOICES, default=NOT_PAID)
     payment = models.ForeignKey(
-        Payment, related_name="purchases", on_delete=models.PROTECT
+        Payment,
+        related_name="purchases",
+        on_delete=models.PROTECT,
+        null=True,
+        blank=True,
     )
 
     def __str__(self):
