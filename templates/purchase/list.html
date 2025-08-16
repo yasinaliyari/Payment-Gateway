@@ -8,7 +8,7 @@
     {% for purchase in purchases %}
         <p>{{ purchase.price }}</p>
         <p>{{ purchase.package }}</p>
-        <p>{{ purchase.status }}</p>
+        <p>{{ purchase.get_status_display }}</p>
     {% endfor %}
 </body>
 </html>
