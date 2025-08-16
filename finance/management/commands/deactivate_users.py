@@ -6,7 +6,9 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument("username", nargs="+", type=str)
-        # parser.add_argument("--isstaff", help="Deactive if user is not staff")
+        parser.add_argument(
+            "--isstaff", action="store_true", help="Deactive if user is not staff"
+        )
 
     def handle(self, *args, **options):
         usernames = options["username"]
