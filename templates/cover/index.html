@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,19 +24,47 @@
         <div class="inner">
           <h3 class="masthead-brand">Cover</h3>
           <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="#">Features</a>
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link active" href="#">{% translate 'Home' %}</a>
+            <a class="nav-link" href="#">{% translate 'Features' %}</a>
+            <a class="nav-link" href="#">{% translate 'Contact' %}</a>
           </nav>
         </div>
       </header>
 
       <main role="main" class="inner cover">
-        <h1 class="cover-heading">Cover your page.</h1>
-        <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+        <h1 class="cover-heading">{% translate 'Cover your page.' %}</h1>
+        <p class="lead">{% blocktrans %}Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.{% endblocktrans %}</p>
         <p class="lead">
-          <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+          <a href="#" class="btn btn-lg btn-secondary">{% translate 'Learn more' %}</a>
         </p>
+
+        {% get_current_language as LANGUAGE_CODE %}
+{#        {% get_current_language_bidi as LANGUAGE_BIDI %}#}
+        {% get_language_info for LANGUAGE_CODE as lang %}
+
+        <p>
+            Language code: {{ lang.code }}<br>
+            Name of language: {{ lang.name_local }}<br>
+            Name in English: {{ lang.name }}<br>
+            Bi-directional: {{ lang.bidi }}<br>
+            Name in the active language: {{ lang.name_translated }}
+        </p>
+
+        <form action="{% url 'set_language' %}" method='post'>
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}">
+            <select name="language">
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                        {{ language.name_local }} ({{ language.code }}
+                    </option>
+                {% endfor %}
+            </select>
+            <input type="submit" class="btn btn-lg btn-secondary" value="{% translate 'Go' %}">
+        </form>
+
       </main>
 
       <footer class="mastfoot mt-auto">
