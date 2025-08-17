@@ -26,5 +26,6 @@ urlpatterns = [
     path("finance/", include("finance.urls")),
     path("package/", include("package.urls")),
     path("purchase/", include("purchase.urls")),
+    path("i18n/", include("django.conf.urls.i18n")),
     path("", TemplateView.as_view(template_name="cover/index.html")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
