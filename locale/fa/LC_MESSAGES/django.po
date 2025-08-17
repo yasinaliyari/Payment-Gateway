@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-17 13:57+0330\n"
+"POT-Creation-Date: 2025-08-17 16:24+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
 #: .\finance\models.py:18
 msgid "Saman"
 msgstr ""
@@ -124,3 +125,30 @@ msgstr "بسته"
 #: .\package\models.py:17
 msgid "Packages"
 msgstr "بسته ها"
+
+#: .\templates\cover\index.html:27
+msgid "Home"
+msgstr "خانه"
+
+#: .\templates\cover\index.html:28
+msgid "Features"
+msgstr "امکانات"
+
+#: .\templates\cover\index.html:29
+msgid "Contact"
+msgstr "تماس با ما"
+
+#: .\templates\cover\index.html:35
+msgid "Cover your page."
+msgstr "عنوان تستی"
+
+#: .\templates\cover\index.html:36
+msgid ""
+"Cover is a one-page template for building simple and beautiful home pages. "
+"Download, edit the text, and add your own fullscreen background photo to "
+"make it your own."
+msgstr "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد."
+
+#: .\templates\cover\index.html:38
+msgid "Learn more"
+msgstr "ادامه مطلب"
