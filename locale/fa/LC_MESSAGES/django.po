@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-17 13:57+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: .\finance\models.py:18
+msgid "Saman"
+msgstr ""
+
+#: .\finance\models.py:19
+msgid "Shaparak"
+msgstr ""
+
+#: .\finance\models.py:20
+msgid "Finotech"
+msgstr ""
+
+#: .\finance\models.py:21
+msgid "Zarrinpal"
+msgstr ""
+
+#: .\finance\models.py:22
+msgid "Parsian"
+msgstr ""
+
+#: .\finance\models.py:25
+msgid "gateway title"
+msgstr ""
+
+#: .\finance\models.py:27
+msgid "request url"
+msgstr ""
+
+#: .\finance\models.py:30
+msgid "verify url"
+msgstr ""
+
+#: .\finance\models.py:33
+msgid "gateway code"
+msgstr ""
+
+#: .\finance\models.py:35
+msgid "is enabled"
+msgstr ""
+
+#: .\finance\models.py:36
+msgid "auth data"
+msgstr ""
+
+#: .\finance\models.py:39
+msgid "Gateway"
+msgstr ""
+
+#: .\finance\models.py:40
+msgid "Gateways"
+msgstr ""
+
+#: .\finance\models.py:73
+msgid "invoice number"
+msgstr ""
+
+#: .\finance\models.py:76
+msgid "payment amount"
+msgstr ""
+
+#: .\finance\models.py:83
+msgid "gateway"
+msgstr ""
+
+#: .\finance\models.py:86
+msgid "is paid status"
+msgstr ""
+
+#: .\finance\models.py:87
+msgid "logs"
+msgstr ""
+
+#: .\finance\models.py:90
+msgid "User"
+msgstr ""
+
+#: .\finance\models.py:94
+msgid "authority"
+msgstr ""
+
+#: .\finance\models.py:97
+msgid "Payment"
+msgstr ""
+
+#: .\finance\models.py:98
+msgid "Payments"
+msgstr ""
+
+#: .\finance\models.py:130
+msgid "Instant payment"
+msgstr ""
+
+#: .\package\models.py:6
+msgid "title"
+msgstr "عنوان"
+
+#: .\package\models.py:7
+msgid "price"
+msgstr "قیمت"
+
+#: .\package\models.py:16
+msgid "Package"
+msgstr "بسته"
+
+#: .\package\models.py:17
+msgid "Packages"
+msgstr "بسته ها"
