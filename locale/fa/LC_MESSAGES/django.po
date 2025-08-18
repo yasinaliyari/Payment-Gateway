@@ -8,55 +8,84 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-17 16:24+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2025-08-18 22:27+0330\n"
+"PO-Revision-Date: 2025-08-18 22:31+0330\n"
+"Last-Translator:   <yasinaliyari30@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.10.2\n"
+
+#: .\blog\apps.py:8
+msgid "blog"
+msgstr ""
+
+#: .\blog\models.py:6 .\package\models.py:6
+msgid "title"
+msgstr "عنوان"
+
+#: .\blog\models.py:7
+msgid "body"
+msgstr ""
+
+#: .\blog\models.py:8
+msgid "create time"
+msgstr ""
+
+#: .\blog\models.py:9
+msgid "modified time"
+msgstr ""
+
+#: .\blog\models.py:12
+msgid "Post"
+msgstr ""
+
+#: .\blog\models.py:13
+msgid "Posts"
+msgstr ""
 
 #: .\finance\models.py:18
 msgid "Saman"
-msgstr ""
+msgstr "سامان"
 
 #: .\finance\models.py:19
 msgid "Shaparak"
-msgstr ""
+msgstr "شاپرک"
 
 #: .\finance\models.py:20
 msgid "Finotech"
-msgstr ""
+msgstr "فینکوتک"
 
 #: .\finance\models.py:21
 msgid "Zarrinpal"
-msgstr ""
+msgstr "زرین پال"
 
 #: .\finance\models.py:22
 msgid "Parsian"
-msgstr ""
+msgstr "پارسیان"
 
 #: .\finance\models.py:25
 msgid "gateway title"
-msgstr ""
+msgstr "عنوان درگاه"
 
 #: .\finance\models.py:27
 msgid "request url"
-msgstr ""
+msgstr "آدرس درخواست"
 
 #: .\finance\models.py:30
 msgid "verify url"
-msgstr ""
+msgstr "آدرس تایید"
 
 #: .\finance\models.py:33
 msgid "gateway code"
-msgstr ""
+msgstr "کد درگاه"
 
 #: .\finance\models.py:35
 msgid "is enabled"
-msgstr ""
+msgstr "فعال شده است"
 
 #: .\finance\models.py:36
 msgid "auth data"
@@ -64,11 +93,11 @@ msgstr ""
 
 #: .\finance\models.py:39
 msgid "Gateway"
-msgstr ""
+msgstr "درگاه"
 
 #: .\finance\models.py:40
 msgid "Gateways"
-msgstr ""
+msgstr "درگاه ها"
 
 #: .\finance\models.py:73
 msgid "invoice number"
@@ -76,15 +105,15 @@ msgstr ""
 
 #: .\finance\models.py:76
 msgid "payment amount"
-msgstr ""
+msgstr "مبلغ پرداختی"
 
 #: .\finance\models.py:83
 msgid "gateway"
-msgstr ""
+msgstr "درگاه"
 
 #: .\finance\models.py:86
 msgid "is paid status"
-msgstr ""
+msgstr "وضعیت پرداخت"
 
 #: .\finance\models.py:87
 msgid "logs"
@@ -100,19 +129,15 @@ msgstr ""
 
 #: .\finance\models.py:97
 msgid "Payment"
-msgstr ""
+msgstr "پرداخت"
 
 #: .\finance\models.py:98
 msgid "Payments"
-msgstr ""
+msgstr "پرداخت ها"
 
 #: .\finance\models.py:130
 msgid "Instant payment"
 msgstr ""
-
-#: .\package\models.py:6
-msgid "title"
-msgstr "عنوان"
 
 #: .\package\models.py:7
 msgid "price"
@@ -125,6 +150,44 @@ msgstr "بسته"
 #: .\package\models.py:17
 msgid "Packages"
 msgstr "بسته ها"
+
+#: .\templates\blog\index.html:31
+msgid "Subscribe"
+msgstr "اشتراک"
+
+#: .\templates\blog\index.html:34
+msgid "Yasin"
+msgstr "یاسین"
+
+#: .\templates\blog\index.html:40
+msgid "Sign up"
+msgstr "ثبت نام"
+
+#: .\templates\blog\index.html:64
+msgid "Title of a longer featured blog post"
+msgstr ""
+
+#: .\templates\blog\index.html:65
+msgid ""
+"Multiple lines of text that form the lede, informing new readers quickly and"
+" efficiently about what's most interesting in this post's contents."
+msgstr ""
+
+#: .\templates\blog\index.html:66
+msgid "Continue reading..."
+msgstr "بیشتر..."
+
+#: .\templates\blog\index.html:181
+msgid "About"
+msgstr "درباره ما"
+
+#: .\templates\blog\index.html:186
+msgid "Archives"
+msgstr ""
+
+#: .\templates\blog\index.html:220
+msgid "Back to top"
+msgstr ""
 
 #: .\templates\cover\index.html:27
 msgid "Home"
@@ -147,8 +210,22 @@ msgid ""
 "Cover is a one-page template for building simple and beautiful home pages. "
 "Download, edit the text, and add your own fullscreen background photo to "
 "make it your own."
-msgstr "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد."
+msgstr ""
+"لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از "
+"طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که"
+" لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف "
+"بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و "
+"آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت "
+"بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در "
+"زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود "
+"در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل "
+"حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی "
+"اساسا مورد استفاده قرار گیرد."
 
 #: .\templates\cover\index.html:38
 msgid "Learn more"
 msgstr "ادامه مطلب"
+
+#: .\templates\cover\index.html:65
+msgid "Go"
+msgstr "اعمال"
