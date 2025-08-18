@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.conf import settings
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.views.generic import TemplateView
 from django.conf.urls.static import static
 
@@ -26,6 +26,10 @@ urlpatterns = [
     path("finance/", include("finance.urls")),
     path("package/", include("package.urls")),
     path("purchase/", include("purchase.urls")),
+    path("blog/", include("blog.urls")),
     path("i18n/", include("django.conf.urls.i18n")),
     path("", TemplateView.as_view(template_name="cover/index.html")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if "rosetta" in settings.INSTALLED_APPS:
+    urlpatterns += [re_path(r"^rosetta/", include("rosetta.urls"))]
