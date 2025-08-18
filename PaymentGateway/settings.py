@@ -28,6 +28,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    "modeltranslation",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -37,6 +38,8 @@ INSTALLED_APPS = [
     "finance.apps.FinanceConfig",
     "package.apps.PackageConfig",
     "purchase.apps.PurchaseConfig",
+    "blog.apps.BlogConfig",
+    "rosetta",
 ]
 
 MIDDLEWARE = [
@@ -111,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = "en-us"
 LANGUAGES = (
     ("en-us", "English"),
-    ("fa-ir", "Persian"),
+    ("fa", "Persian"),
 )
 LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
 
